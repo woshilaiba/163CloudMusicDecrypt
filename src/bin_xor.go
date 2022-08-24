@@ -33,6 +33,7 @@ func ConvertCacheFile(in, out string) {
 
 	r := bufio.NewReader(fin)
 	w := bufio.NewWriter(fout)
+	defer w.Flush()
 	bf := make([]byte, 1024)
 	for {
 		tbf := bf
